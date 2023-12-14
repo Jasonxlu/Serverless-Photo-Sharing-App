@@ -4,6 +4,8 @@ This application is a simple photo-sharing social media app that allows users to
 # Architecture 
 The project consists of a Next.js frontend client hosted on Vercel and connected to the backend via AWS API Gateway. A serverless implementation is used with several lambda functions to access and modify data stored in RDS and images stored in S3. This general architecture is pictured below:
 
+![Architecture Graphic](architecture.png "Architecture")
+
 
 # Database
 The database contains 3 tables which store the following information:
@@ -29,3 +31,7 @@ The lambda functions are doing all the heavy lifting computation-wise and are ac
 | /users/followees/{follower}| GET| None | Return all the user ids of the users follower follows            |      get_followees      |
 | /feed/{userid}   | GET | None | Return the posts (image bucket keys, captions, and user ids of posters) made by userid and all users they follow            |  get_feed          |
 | /post/{userid}   | POST | None | Create a new post by userid with the image and caption included in the request body             |  post_image          |
+
+## Collaborators
+[Natalie Hill](https://github.com/boxabll)\
+[Brennan Benson](https://github.com/brennanb2025)
